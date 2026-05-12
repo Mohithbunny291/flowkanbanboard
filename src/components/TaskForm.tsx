@@ -71,13 +71,21 @@ function TaskForm({
             className="border border-gray-300 rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500"
           />
         </div>
-
-        <button
-          type="submit"
-          className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-xl transition duration-200 shadow-md"
-        >
-          Add Task
-        </button>
+          <button
+            type="submit"
+            disabled={
+              !title.trim() ||
+              !description.trim()
+            }
+            className={`bg-blue-600 text-white font-semibold px-6 py-3 rounded-xl transition duration-200 shadow-md ${
+              !title.trim() ||
+              !description.trim()
+                ? "opacity-50 cursor-not-allowed"
+                : "hover:bg-blue-700"
+            }`}
+          >
+            Add Task
+          </button>
       </div>
     </form>
   );
