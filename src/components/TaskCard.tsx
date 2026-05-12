@@ -27,7 +27,7 @@ function TaskCard({
           ref={provided.innerRef}
           {...provided.draggableProps}
           {...provided.dragHandleProps}
-          className="bg-slate-100 p-4 rounded-xl shadow mb-4 hover:shadow-lg transition"
+          className="bg-slate-100 p-4 rounded-xl shadow mb-4 hover:shadow-lg hover:-translate-y-1 transition-all duration-200"
         >
           <h3 className="text-lg font-bold">
             {task.title}
